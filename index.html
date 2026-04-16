@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dusza Tarota – Indywidualne sesje tarota</title>
+  <meta name="description"
+    content="Indywidualne sesje tarota. Odkryj odpowiedzi, których szukasz. Zarezerwuj sesję już dziś." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- Top Nav Elements -->
+  <div class="top-bar container">
+    <img src="logo.png" alt="Dusza Tarota Logo" class="site-logo" />
+    
+    <!-- Language Switcher -->
+    <div class="lang-switcher" role="navigation" aria-label="Language switcher">
+      <button id="lang-pl" class="lang-btn active" onclick="setLang('pl')" aria-pressed="true">PL</button>
+      <span class="lang-divider">|</span>
+      <button id="lang-ua" class="lang-btn" onclick="setLang('ua')" aria-pressed="false">UA</button>
+    </div>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="hero">
+    <div class="stars-bg stars-bg--hero-dense" aria-hidden="true"></div>
+    <div class="stars-bg stars-twinkle-1" aria-hidden="true"></div>
+    <div class="stars-bg stars-twinkle-2" aria-hidden="true"></div>
+    <div class="container hero-container">
+
+      <!-- Text (DOM-first → appears above image on mobile) -->
+      <div class="hero-content">
+        <h1 class="hero-heading" data-pl="Czasem odpowiedzi są bliżej, niż myślisz"
+          data-ua="Іноді відповіді ближче, ніж ти думаєш">
+          Czasem odpowiedzi są bliżej, niż myślisz
+        </h1>
+        <p class="hero-sub" data-pl="Indywidualne sesje tarota" data-ua="Індивідуальні сеанси таро">
+          Indywidualne sesje tarota
+        </p>
+      </div>
+
+      <!-- Image with matryca + glow overlay -->
+      <div class="hero-image-wrapper">
+        <!-- Inner unit: glow + matryca positioned relative to the character -->
+        <div class="hero-image-inner">
+          <div class="hero-glow" aria-hidden="true"></div>
+          <img src="matryca.svg" alt="" aria-hidden="true" class="hero-matryca" />
+          <img src="wrozba hero 1.png" alt="Wróżka z kołem zodiaku" class="hero-image" width="640" height="760" />
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION: Dla kogo jest to spotkanie? -->
+  <section class="cards-section" id="sessions">
+    <div class="container">
+
+      <div class="cards-header">
+        <h2 class="section-title" data-pl="Dla kogo jest to spotkanie?" data-ua="Для кого це зустріч?">
+          Dla kogo jest to spotkanie?
+        </h2>
+        <p class="section-sub"
+          data-pl="Jeśli czujesz, że utknąłeś w martwym punkcie lub szukasz potwierdzenia swoich przeczuć."
+          data-ua="Якщо ти відчуваєш, що застряг на місці або шукаєш підтвердження своїх передчуттів.">
+          Jeśli czujesz, że utknąłeś w martwym punkcie lub szukasz potwierdzenia swoich przeczuć.
+        </p>
+      </div>
+
+      <div class="cards-grid">
+
+        <!-- Card 1 -->
+        <article class="card" tabindex="0">
+          <div class="card-icon" aria-hidden="true">🌫️</div>
+          <h3 class="card-title" data-pl="Niepewność Jutra" data-ua="Невизначеність завтра">
+            Niepewność Jutra
+          </h3>
+          <p class="card-desc" data-pl="Gdy mgła przyszłości zasłania Twój cel i potrzebujesz jasności w działaniu."
+            data-ua="Коли туман майбутнього приховує твою мету і тобі потрібна ясність у діях.">
+            Gdy mgła przyszłości zasłania Twój cel i potrzebujesz jasności w działaniu.
+          </p>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="card" tabindex="0">
+          <div class="card-icon" aria-hidden="true">⚖️</div>
+          <h3 class="card-title" data-pl="Trudne Decyzje" data-ua="Складні рішення">
+            Trudne Decyzje
+          </h3>
+          <p class="card-desc" data-pl="Wybór drogi zawodowej lub życiowej, który wymaga głębszego wglądu."
+            data-ua="Вибір професійного або життєвого шляху, який потребує глибшого розуміння.">
+            Wybór drogi zawodowej lub życiowej, który wymaga głębszego wglądu.
+          </p>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="card" tabindex="0">
+          <div class="card-icon" aria-hidden="true">🤝</div>
+          <h3 class="card-title" data-pl="Relacje i Uczucia" data-ua="Стосунки та почуття">
+            Relacje i Uczucia
+          </h3>
+          <p class="card-desc" data-pl="Zrozumienie dynamiki między Tobą a bliskimi osobami."
+            data-ua="Розуміння динаміки між тобою та близькими людьми.">
+            Zrozumienie dynamiki między Tobą a bliskimi osobami.
+          </p>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="card" tabindex="0">
+          <div class="card-icon" aria-hidden="true">🔓</div>
+          <h3 class="card-title" data-pl="Uczucie Blokady" data-ua="Відчуття блокування">
+            Uczucie Blokady
+          </h3>
+          <p class="card-desc" data-pl="Uwolnienie energii, która nie pozwala Ci ruszyć z miejsca."
+            data-ua="Звільнення енергії, яка не дає тобі рухатись вперед.">
+            Uwolnienie energii, która nie pozwala Ci ruszyć z miejsca.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: About Lili -->
+  <section class="about-section" id="about">
+    <div class="stars-bg" aria-hidden="true"></div>
+    <div class="container">
+      <div class="about-container">
+
+        <!-- LEFT: Text content -->
+        <div class="about-content">
+          <h2 class="about-heading" data-pl="Cześć, jestem Lili" data-ua="Привіт, я — Ліля">Cześć, jestem Lili</h2>
+
+          <div class="about-body">
+            <p class="about-p" data-pl="Chcę opowiedzieć historię o tym, jak droga wybrała mnie, zanim ja wybrałam ją."
+              data-ua="Хочу розповісти історію про те, як шлях обрав мене, перш ніж я обрала його.">
+              Chcę opowiedzieć historię o tym, jak droga wybrała mnie, zanim ja wybrałam ją.</p>
+
+            <p class="about-p"
+              data-pl="Kiedyś podchodziłam do tego z dystansem. Nie wierzyłam, że mogę pomagać innym w ich życiowych decyzjach. A jednak, kiedy to robiłam, działo się coś niezwykłego."
+              data-ua="Колись я ставилась до цього зі скептицизмом. Не вірила, що можу допомагати іншим у їхніх рішеннях. Але коли це робила — відбувалось щось неймовірне.">
+              Kiedyś podchodziłam do tego z dystansem. Nie wierzyłam, że mogę pomagać innym w
+              ich życiowych decyzjach. A jednak, kiedy to robiłam, działo się coś niezwykłego.</p>
+
+            <p class="about-p"
+              data-pl="Z czasem ludzie zaczęli wracać. Szukali odpowiedzi, wsparcia i światła w trudnych momentach."
+              data-ua="З часом люди почали повертатися. Вони шукали відповіді, підтримки і світла у важкі моменти.">
+              Z czasem ludzie zaczęli wracać. Szukali odpowiedzi, wsparcia i światła w trudnych
+              momentach.</p>
+
+            <blockquote class="about-quote">
+              <p data-pl="„To nie jest przypadek. To moja misja." ✨" data-ua="«Це не випадковість. Це моя місія.» ✨">
+                „To nie jest przypadek. To moja misja." ✨</p>
+            </blockquote>
+
+            <p class="about-p"
+              data-pl="Dziś wiem, że moim powołaniem jest prowadzić innych tam, gdzie panuje chaos i niepewność."
+              data-ua="Сьогодні я знаю, що моє покликання — вести інших там, де панує хаос і невизначеність.">
+              Dziś wiem, że moim powołaniem jest prowadzić innych tam, gdzie panuje chaos i niepewność.</p>
+
+            <p class="about-p" data-pl="Jestem tu dla Was. 🤍" data-ua="Я тут для вас. 🤍">Jestem tu dla Was. 🤍</p>
+          </div>
+        </div>
+
+        <!-- RIGHT: Portrait in arch frame -->
+        <div class="about-image-col">
+          <div class="about-arch">
+            <img src="lili.png" alt="Lili – tarocistka" class="about-portrait" />
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: Process -->
+  <section class="process-section" id="process">
+    <div class="stars-bg" aria-hidden="true"></div>
+    <div class="container">
+      <div class="process-container">
+
+        <!-- LEFT: Image -->
+        <div class="process-image-col">
+          <img src="process.png" alt="Sesja tarota przy świecy" class="process-image" />
+        </div>
+
+        <!-- RIGHT: Heading + Steps -->
+        <div class="process-content">
+          <h2 class="process-heading" data-pl="Jak wygląda sesja" data-ua="Як виглядає сеанс">Jak wygląda
+            sesja</h2>
+
+          <ol class="process-steps">
+            <li class="process-step">
+              <div class="step-number" aria-hidden="true">1</div>
+              <div class="step-body">
+                <h3 class="step-title" data-pl="Rezerwacja" data-ua="Бронювання">Rezerwacja</h3>
+                <p class="step-desc" data-pl="Wybierz dogodny termin i określ obszar, nad którym chcesz pracować."
+                  data-ua="Оберіть зручний час і визначте сферу, над якою хочеш попрацювати.">
+                  Wybierz dogodny termin i określ obszar, nad którym chcesz pracować.</p>
+              </div>
+            </li>
+
+            <li class="process-step">
+              <div class="step-number" aria-hidden="true">2</div>
+              <div class="step-body">
+                <h3 class="step-title" data-pl="Sesja" data-ua="Сеанс">Sesja</h3>
+                <p class="step-desc"
+                  data-pl="Spotykamy się online w bezpiecznej, empatycznej przestrzeni, gdzie karty stają się lustrem Twojej sytuacji."
+                  data-ua="Зустрічаємось онлайн у безпечному, емпатичному просторі, де карти стають дзеркалом твоєї ситуації.">
+                  Spotykamy się online w bezpiecznej, empatycznej przestrzeni, gdzie karty stają się lustrem Twojej
+                  sytuacji.</p>
+              </div>
+            </li>
+
+            <li class="process-step">
+              <div class="step-number" aria-hidden="true">3</div>
+              <div class="step-body">
+                <h3 class="step-title" data-pl="Wskazówki" data-ua="Рекомендації">Wskazówki</h3>
+                <p class="step-desc"
+                  data-pl="Po sesji otrzymasz konkretne wskazówki, które pomogą Ci podjąć kolejne kroki."
+                  data-ua="Після сеансу отримаєш конкретні поради, які допоможуть зробити наступні кроки.">
+                  Po sesji otrzymasz konkretne wskazówki, które pomogą Ci podjąć kolejne kroki.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: Pricing -->
+  <section class="pricing-section" id="pricing">
+    <div class="stars-bg" aria-hidden="true"></div>
+    <div class="container">
+      <div class="pricing-header">
+        <h2 class="pricing-heading" data-pl="Wybierz głębię wglądu" data-ua="Оберіть глибину розуміння">Wybierz głębię
+          wglądu</h2>
+        <p class="pricing-sub" data-pl="Inwestycja w Twój spokój ducha" data-ua="Інвестиція у твій душевний спокій">
+          Inwestycja w Twój spokój ducha</p>
+      </div>
+
+      <div class="pricing-grid">
+
+        <!-- Card 1: Basic -->
+        <div class="pricing-card">
+          <p class="pricing-card-name" data-pl="Szybki wgląd" data-ua="Швидкий погляд">Szybki wgląd</p>
+          <div class="pricing-duration" data-pl="15 minut" data-ua="15 хвилин">15 minut</div>
+          <div class="pricing-price-block">
+            <div class="pricing-price">90 PLN</div>
+            <div class="pricing-price-eur">≈ 20 €</div>
+          </div>
+          <ul class="pricing-features">
+            <li data-pl="Skupienie na jednym pytaniu" data-ua="Фокус на одному питанні">Skupienie na jednym pytaniu</li>
+            <li data-pl="Krótki rozkład ogólny" data-ua="Короткий загальний розклад">Krótki rozkład ogólny</li>
+            <li data-pl="Wskazówka od kart" data-ua="Підказка від карт">Wskazówka od kart</li>
+          </ul>
+          <a href="https://calendly.com/dusza-tarota-sesje/15minut" target="_blank" rel="noopener noreferrer" class="pricing-btn" data-pl="Wybieram" data-ua="Обираю">Wybieram</a>
+        </div>
+
+        <!-- Card 2: Highlighted -->
+        <div class="pricing-card pricing-card--highlight">
+          <div class="pricing-badge" data-pl="NAJCZĘŚCIEJ WYBIERANA" data-ua="НАЙПОПУЛЯРНІШИЙ">NAJCZĘŚCIEJ WYBIERANA
+          </div>
+          <p class="pricing-card-name" data-pl="Pełna sesja" data-ua="Повний сеанс">Pełna sesja</p>
+          <div class="pricing-duration" data-pl="30 minut" data-ua="30 хвилин">30 minut</div>
+          <div class="pricing-price-block">
+            <div class="pricing-price pricing-price--gold">150 PLN</div>
+            <div class="pricing-price-eur">≈ 35 €</div>
+          </div>
+          <ul class="pricing-features">
+            <li data-pl="Rozbudowany rozkład tematyczny" data-ua="Розширений тематичний розклад">Rozbudowany rozkład
+              tematyczny</li>
+            <li data-pl="Możliwość wielu pytań" data-ua="Можливість кількох питань">Możliwość wielu pytań</li>
+            <li data-pl="Analiza energetyczna" data-ua="Енергетичний аналіз">Analiza energetyczna</li>
+            <li data-pl="Podsumowanie e-mail" data-ua="Підсумок електронною поштою">Podsumowanie e-mail</li>
+          </ul>
+          <a href="https://calendly.com/dusza-tarota-sesje/30minut" target="_blank" rel="noopener noreferrer" class="pricing-btn pricing-btn--gold" data-pl="Wybieram" data-ua="Обираю">Wybieram</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: Testimonials -->
+  <section class="testimonials-section" id="testimonials">
+    <div class="stars-bg" aria-hidden="true"></div>
+    <div class="container">
+      <div class="testimonials-grid">
+
+        <!-- Testimonial 1 -->
+        <article class="testimonial-card">
+          <p class="testimonial-quote" data-pl="„Sesja była dla mnie momentem zatrzymania. Nagle wiele rzeczy zaczęło mieć sens.”" data-ua="„Сеанс став для мене моментом зупинки. Раптом багато речей почали набувати сенсу.”">„Sesja była dla mnie momentem zatrzymania. Nagle wiele rzeczy zaczęło mieć sens.”</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" aria-hidden="true">M</div>
+            <span class="author-name" data-pl="Marta, Warszawa" data-ua="Марта, Варшава">Marta, Warszawa</span>
+          </div>
+        </article>
+
+        <!-- Testimonial 2 -->
+        <article class="testimonial-card">
+          <p class="testimonial-quote" data-pl="„Nie spodziewałem się takiej trafności. To dało mi dużo do przemyślenia.”" data-ua="„Не очікував такої точності. Це дало мені багато для роздумів.”">„Nie spodziewałem się takiej trafności. To dało mi dużo do przemyślenia.”</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" aria-hidden="true">P</div>
+            <span class="author-name" data-pl="Piotr, Wrocław" data-ua="Пьотр, Вроцлав">Piotr, Wrocław</span>
+          </div>
+        </article>
+
+        <!-- Testimonial 3 -->
+        <article class="testimonial-card">
+          <p class="testimonial-quote" data-pl="„Czułam się bardzo bezpiecznie i spokojnie. Mogłam powiedzieć wszystko bez oceniania.”" data-ua="„Я почувалася дуже безпечно та спокійно. Могла сказати все без засудження.”">„Czułam się bardzo bezpiecznie i spokojnie. Mogłam powiedzieć wszystko bez oceniania.”</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" aria-hidden="true">A</div>
+            <span class="author-name" data-pl="Anna, Gdańsk" data-ua="Анна, Гданськ">Anna, Gdańsk</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION: FAQ -->
+  <section class="faq-section" id="faq">
+    <div class="stars-bg" aria-hidden="true"></div>
+    <div class="container faq-container">
+      <h2 class="faq-heading" data-pl="Najczęstsze pytania" data-ua="Найчастіші запитання">Najczęstsze pytania</h2>
+
+      <div class="faq-accordion">
+
+        <!-- FAQ Item 1 -->
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span data-pl="Czy muszę się przygotować do sesji?" data-ua="Чи потрібно мені готуватися до сеансу?">Czy muszę się przygotować do sesji?</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer-wrapper">
+            <div class="faq-answer">
+              <p data-pl="Nie musisz przygotowywać się w specjalny sposób. Wystarczy, że przyjdziesz z otwartą głową i ewentualnie pomyślisz, o czym chcesz porozmawiać." data-ua="Вам не потрібно готуватися особливим чином. Достатньо прийти з відкритою головою і, можливо, подумати, про що ви хочете поговорити.">
+                Nie musisz przygotowywać się w specjalny sposób. Wystarczy, że przyjdziesz z otwartą głową i ewentualnie pomyślisz, o czym chcesz porozmawiać.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 2 -->
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span data-pl="Czy karty przewidują przyszłość ze 100% pewnością?" data-ua="Чи передбачають карти майбутнє зі 100% впевненістю?">Czy karty przewidują przyszłość ze 100% pewnością?</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer-wrapper">
+            <div class="faq-answer">
+              <p data-pl="Nie. Tarot nie daje sztywnych przepowiedni, ale pokazuje możliwe kierunki, energie i wzorce, które mogą pomóc Ci lepiej zrozumieć sytuację." data-ua="Ні. Таро не дає жорстких пророцтв, але показує можливі напрямки, енергії та патерни, які можуть допомогти вам краще зрозуміти ситуацію.">
+                Nie. Tarot nie daje sztywnych przepowiedni, ale pokazuje możliwe kierunki, energie i wzorce, które mogą pomóc Ci lepiej zrozumieć sytuację.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 3 -->
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span data-pl="Jak wygląda sesja online?" data-ua="Як виглядає онлайн-сеанс?">Jak wygląda sesja online?</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer-wrapper">
+            <div class="faq-answer">
+              <p data-pl="Sesja odbywa się online (np. Google Meet lub telefonicznie). Rozmawiamy w spokojnej atmosferze, a ja na bieżąco interpretuję karty i odpowiadam na Twoje pytania." data-ua="Сеанс відбувається онлайн (наприклад, через Google Meet або по телефону). Ми спілкуємося в спокійній атмосфері, і я в реальному часі інтерпретую карти та відповідаю на ваші запитання.">
+                Sesja odbywa się online (np. Google Meet lub telefonicznie). Rozmawiamy w spokojnej atmosferze, a ja na bieżąco interpretuję karty i odpowiadam na Twoje pytania.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 4 -->
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span data-pl="Czy rozmowa jest poufna?" data-ua="Чи конфіденційна розмова?">Czy rozmowa jest poufna?</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer-wrapper">
+            <div class="faq-answer">
+              <p data-pl="Tak. Wszystko, co powiesz podczas sesji, pozostaje między nami. Tworzę bezpieczną przestrzeń bez oceniania." data-ua="Так. Все, що ви скажете під час сеансу, залишається між нами. Я створюю безпечний простір без засудження.">
+                Tak. Wszystko, co powiesz podczas sesji, pozostaje między nami. Tworzę bezpieczną przestrzeń bez oceniania.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 5 -->
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span data-pl="Czy mogę zmienić termin sesji?" data-ua="Чи можу я змінити час сеансу?">Czy mogę zmienić termin sesji?</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer-wrapper">
+            <div class="faq-answer">
+              <p data-pl="Tak, zmiana terminu jest możliwa do 24 godzin przed spotkaniem." data-ua="Так, перенесення сеансу можливе за 24 години до зустрічі.">
+                Tak, zmiana terminu jest możliwa do 24 godzin przed spotkaniem.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 6 -->
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span data-pl="Co jeśli nie wiem, o co zapytać?" data-ua="Що, якщо я не знаю, про що запитати?">Co jeśli nie wiem, o co zapytać?</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer-wrapper">
+            <div class="faq-answer">
+              <p data-pl="To całkowicie w porządku. Podczas sesji pomogę Ci doprecyzować temat i znaleźć właściwy kierunek rozmowy." data-ua="Це абсолютно нормально. Під час сеансу я допоможу вам уточнити тему і знайти правильний напрямок розмови.">
+                To całkowicie w porządku. Podczas sesji pomogę Ci doprecyzować temat i znaleźć właściwy kierunek rozmowy.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER SECTION -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      
+      <!-- Footer Header -->
+      <div class="footer-header">
+        <img src="logo.png" alt="Dusza Tarota Logo" class="footer-logo" />
+        <div class="footer-title-group">
+          <h2 class="footer-title">Dusza Tarota</h2>
+          <p class="footer-subtitle" data-pl="Indywidualne sesje tarota" data-ua="Індивідуальні сеанси таро">Indywidualne sesje tarota</p>
+        </div>
+      </div>
+
+      <!-- Footer Accordion (Legal / Info) -->
+      <div class="faq-accordion footer-accordion">
+
+        <!-- Accordion Item 1: Charakter sesji (OPEN BY DEFAULT) -->
+        <div class="faq-item active">
+          <button class="faq-question" aria-expanded="true">
+            <span data-pl="Charakter sesji" data-ua="Характер сеансу">Charakter sesji</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer-wrapper">
+            <div class="faq-answer">
+              <p data-pl="Sesje mają charakter intuicyjny i rozwojowy. Tarot jest narzędziem wspierającym refleksję, zrozumienie sytuacji i spojrzenie na nią z innej perspektywy.<br><br>Nie są to porady prawne, finansowe, medyczne ani psychologiczne. Decyzje podejmujesz samodzielnie i bierzesz za nie odpowiedzialność.<br><br>Podczas sesji możesz otrzymać wskazówki, ale nie gotowe rozwiązania — to przestrzeń do pracy z własną intuicją i świadomością." data-ua="Сеанси мають інтуїтивний та розвиваючий характер. Таро — це інструмент, що підтримує рефлексію, розуміння ситуації та погляд на неї з іншої перспективи.<br><br>Вони не є юридичними, фінансовими, медичними чи психологічними порадами. Рішення ви приймаєте самостійно та несете за них відповідальність.<br><br>Під час сеансу ви можете отримати підказки, але не готові рішення — це простір для роботи з власною інтуїцією та свідомістю.">
+                Sesje mają charakter intuicyjny i rozwojowy. Tarot jest narzędziem wspierającym refleksję, zrozumienie sytuacji i spojrzenie na nią z innej perspektywy.<br><br>
+                Nie są to porady prawne, finansowe, medyczne ani psychologiczne. Decyzje podejmujesz samodzielnie i bierzesz za nie odpowiedzialność.<br><br>
+                Podczas sesji możesz otrzymać wskazówki, ale nie gotowe rozwiązania — to przestrzeń do pracy z własną intuicją i świadomością.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion Item 2: Prywatność i poufność -->
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span data-pl="Prywatność i poufność" data-ua="Приватність і конфіденційність">Prywatność i poufność</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer-wrapper">
+            <div class="faq-answer">
+              <p data-pl="Twoja prywatność jest dla mnie bardzo ważna. Wszystkie informacje, które udostępniasz podczas sesji, pozostają poufne i nie są przekazywane osobom trzecim.<br><br>Dane podane podczas rezerwacji wykorzystywane są wyłącznie w celu realizacji sesji oraz kontaktu z Tobą.<br><br>Sesje odbywają się w bezpiecznej, spokojnej przestrzeni — bez oceniania i z pełnym szacunkiem." data-ua="Ваша приватність є для мене дуже важливою. Вся інформація, якою ви ділитеся під час сеансу, залишається конфіденційною і не передається третім особам.<br><br>Дані, надані під час бронювання, використовуються виключно для проведення сеансу та зв'язку з вами.<br><br>Сеанси відбуваються у безпечному, спокійному просторі — без засудження та з повною повагою.">
+                Twoja prywatność jest dla mnie bardzo ważna. Wszystkie informacje, które udostępniasz podczas sesji, pozostają poufne i nie są przekazywane osobom trzecim.<br><br>
+                Dane podane podczas rezerwacji wykorzystywane są wyłącznie w celu realizacji sesji oraz kontaktu z Tobą.<br><br>
+                Sesje odbywają się w bezpiecznej, spokojnej przestrzeni — bez oceniania i z pełnym szacunkiem.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion Item 3: Rezerwacje i płatności -->
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span data-pl="Rezerwacje i płatności" data-ua="Бронювання та оплата">Rezerwacje i płatności</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer-wrapper">
+            <div class="faq-answer">
+              <p data-pl="Rezerwacja terminu wymaga opłacenia sesji.<br><br>Zmiana terminu jest możliwa do 24 godzin przed spotkaniem. Późniejsze zmiany mogą nie być możliwe.<br><br>Zakup sesji nie podlega zwrotowi.<br><br>W przypadku problemów technicznych lub losowych sytuacji — znajdziemy rozwiązanie." data-ua="Для бронювання часу необхідно оплатити сеанс.<br><br>Зміна часу можлива за 24 години до зустрічі. Пізніші зміни можуть бути неможливими.<br><br>Оплата за сеанс не підлягає поверненню.<br><br>У разі виникнення технічних проблем або непередбачених ситуацій — ми знайдемо рішення.">
+                Rezerwacja terminu wymaga opłacenia sesji.<br><br>
+                Zmiana terminu jest możliwa do 24 godzin przed spotkaniem. Późniejsze zmiany mogą nie być możliwe.<br><br>
+                Zakup sesji nie podlega zwrotowi.<br><br>
+                W przypadku problemów technicznych lub losowych sytuacji — znajdziemy rozwiązanie.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion Item 4: Odpowiedzialność -->
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span data-pl="Odpowiedzialność" data-ua="Відповідальність">Odpowiedzialność</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer-wrapper">
+            <div class="faq-answer">
+              <p data-pl="Korzystając z sesji, akceptujesz, że traktujesz ją jako formę wsparcia i inspiracji, a nie jako jednoznaczną prognozę przyszłości.<br><br>Nie ponoszę odpowiedzialności za decyzje podjęte na podstawie sesji.<br><br>Moim celem jest stworzenie bezpiecznej przestrzeni i pomoc w odnalezieniu własnej drogi." data-ua="Користуючись сеансом, ви погоджуєтесь, що розглядаєте його як форму підтримки та натхнення, а не як однозначний прогноз майбутнього.<br><br>Я не несу відповідальності за рішення, прийняті на основі сеансу.<br><br>Моя мета — створити безпечний простір і допомогти вам знайти власний шлях.">
+                Korzystając z sesji, akceptujesz, że traktujesz ją jako formę wsparcia i inspiracji, a nie jako jednoznaczną prognozę przyszłości.<br><br>
+                Nie ponoszę odpowiedzialności za decyzje podjęte na podstawie sesji.<br><br>
+                Moim celem jest stworzenie bezpiecznej przestrzeni i pomoc w odnalezieniu własnej drogi.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion Item 5: Kontakt -->
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span data-pl="Kontakt" data-ua="Контакти">Kontakt</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer-wrapper">
+            <div class="faq-answer">
+              <p data-pl="Jeśli masz pytania, napisz:<br><a href='mailto:dusza.tarota.sesje@gmail.com' style='color:var(--gold-light);text-decoration:none;'>dusza.tarota.sesje@gmail.com</a>" data-ua="Якщо у вас є запитання, напишіть:<br><a href='mailto:dusza.tarota.sesje@gmail.com' style='color:var(--gold-light);text-decoration:none;'>dusza.tarota.sesje@gmail.com</a>">
+                Jeśli masz pytania, napisz:<br>
+                <a href="mailto:dusza.tarota.sesje@gmail.com" style="color:var(--gold-light);text-decoration:none;">dusza.tarota.sesje@gmail.com</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-divider" aria-hidden="true"></div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2026 Dusza Tarota</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- FLOATING CTA BUTTON -->
+  <a href="https://calendly.com/dusza-tarota-sesje/30minut" target="_blank" rel="noopener noreferrer" class="floating-cta" id="floating-cta" aria-label="Zarezerwuj sesję">
+    <span data-pl="Zarezerwuj sesję 🔮" data-ua="Забронюйте сеанс 🔮">Zarezerwuj sesję 🔮</span>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
