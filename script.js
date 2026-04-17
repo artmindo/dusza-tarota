@@ -83,3 +83,92 @@ faqItems.forEach(item => {
     }
   });
 });
+
+// ===========================
+// TAROT TICKER LOGIC
+// ===========================
+const tickerRows = document.querySelectorAll('.ticker-row');
+const logoSection = document.querySelector('.logo-section');
+const logoPerspectiveContainer = document.querySelector('.logo-perspective');
+
+const CLONES_COUNT = 20;
+
+window.addEventListener('load', () => {
+  tickerRows.forEach(row => {
+    const track = row.querySelector('.ticker-track');
+    if (!track) return;
+    const originals = Array.from(track.children);
+
+    track.innerHTML = '';
+
+    for (let i = 0; i < CLONES_COUNT; i++) {
+      originals.forEach(el => {
+        track.appendChild(el.cloneNode(true));
+      });
+    }
+
+    // Force display to calculate metrics even if hidden by CSS
+    const wasHidden = getComputedStyle(row).display === 'none';
+    if (wasHidden) {
+      row.style.display = 'block';
+    }
+
+    const totalWidth = track.scrollWidth;
+    const sequenceWidth = totalWidth / CLONES_COUNT;
+
+    if (wasHidden) {
+      row.style.display = '';
+    }
+
+    track._sequenceWidth = sequenceWidth;
+    track._offset = - (sequenceWidth * (CLONES_COUNT / 2));
+  });
+
+  if (tickerRows.length > 0) {
+    requestAnimationFrame(animateTicker);
+  }
+});
+
+let tickerLastTime = null;
+
+function animateTicker(time) {
+  if (!tickerLastTime) tickerLastTime = time;
+  const delta = time - tickerLastTime;
+  tickerLastTime = time;
+
+  tickerRows.forEach(row => {
+    const track = row.querySelector('.ticker-track');
+    if (!track || !track._sequenceWidth) return;
+    
+    const w = track._sequenceWidth;
+    let speed = -0.036;
+    if (row.classList.contains('reverse')) speed = 0.036;
+
+    track._offset += delta * speed;
+
+    if (track._offset > 0) {
+      track._offset -= w;
+    }
+    if (track._offset < -w) {
+      track._offset += w;
+    }
+
+    track.style.transform = `translate3d(${track._offset}px, 0, 0)`;
+  });
+
+  if (logoSection && logoPerspectiveContainer) {
+    const rect = logoSection.getBoundingClientRect();
+    const viewportHeight = window.innerHeight;
+
+    let progress = (rect.top + rect.height * 0.5) / viewportHeight;
+
+    if (progress < 0) progress = 0;
+    if (progress > 1) progress = 1;
+
+    const angle = progress * 40;
+
+    logoPerspectiveContainer.style.transform = `rotateX(${angle}deg)`;
+  }
+
+  requestAnimationFrame(animateTicker);
+}
