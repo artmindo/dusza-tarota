@@ -1,3 +1,6 @@
+// REMOVE test_event_code after testing in Meta Events Manager
+const TEST_EVENT_CODE = 'TEST32795';
+
 // ===========================
 // LANGUAGE SWITCHER
 // ===========================
@@ -172,3 +175,77 @@ function animateTicker(time) {
 
   requestAnimationFrame(animateTicker);
 }
+
+// ===========================
+// META PIXEL TRACKING
+// ===========================
+
+function waitForFbq(callback) {
+  if (typeof fbq === 'function') {
+    callback();
+  } else {
+    setTimeout(() => waitForFbq(callback), 100);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  // 1. Add Lead event on main CTA buttons ("Zarezerwuj sesję")
+  const floatingCta = document.getElementById('floating-cta');
+  if (floatingCta) {
+    floatingCta.addEventListener('click', () => {
+      waitForFbq(() => {
+        console.log('FB EVENT: Lead fired');
+        fbq('track', 'Lead', {
+          test_event_code: TEST_EVENT_CODE
+        });
+      });
+    });
+  }
+
+  // 2. Add InitiateCheckout and Lead on pricing selections ("Wybieram")
+  const pricingCards = document.querySelectorAll('.pricing-card');
+  pricingCards.forEach(card => {
+    const btn = card.querySelector('.pricing-btn');
+    const priceEl = card.querySelector('.pricing-price');
+
+    if (btn && priceEl) {
+      btn.addEventListener('click', () => {
+        waitForFbq(() => {
+          console.log('FB EVENT: Lead fired');
+          fbq('track', 'Lead', {
+            test_event_code: TEST_EVENT_CODE
+          });
+
+          // Extract price value
+          let value = 0;
+          const priceText = priceEl.textContent || '';
+          if (priceText.includes('90')) {
+            value = 90;
+          } else if (priceText.includes('150')) {
+            value = 150;
+          }
+
+          console.log('FB EVENT: InitiateCheckout fired', value);
+          fbq('track', 'InitiateCheckout', {
+            value: value,
+            currency: 'PLN',
+            test_event_code: TEST_EVENT_CODE
+          });
+        });
+      });
+    }
+  });
+
+  // 3. Temporary manual test button
+  const testBtn = document.getElementById('test-fb');
+  if (testBtn) {
+    testBtn.addEventListener('click', () => {
+      waitForFbq(() => {
+        console.log('FB EVENT: Lead fired');
+        fbq('track', 'Lead', {
+          test_event_code: TEST_EVENT_CODE
+        });
+      });
+    });
+  }
+});

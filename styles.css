@@ -1086,7 +1086,7 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-top: 4px;
+  margin-top: auto;
   width: 100%;
   padding: 14px 28px;
   border-radius: var(--radius-pill);
